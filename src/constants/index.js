@@ -582,7 +582,7 @@ export const abi = [
   },
 ];
 export const NFT_CONTRACT_ADDRESS =
-  "0x9A8adc9dccB8973bA908753E7bcFF39B392c83E6";
+  "0x429Deee20849c57e50c7bceA54378cBCc3DDa455";
 
 export const whitelistABI = [
   {
@@ -651,4 +651,4 @@ export const whitelistABI = [
 ];
 
 export const WHITELIST_CONTRACT_ADDRESS =
-  "0x429Deee20849c57e50c7bceA54378cBCc3DDa455";
+  "0xAE28C41Ab33989741B75c7b53eBa9c2b0A9A4010";

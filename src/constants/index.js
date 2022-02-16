@@ -651,4 +651,4 @@ export const whitelistABI = [
 ];
 
 export const WHITELIST_CONTRACT_ADDRESS =
-  "0xAE28C41Ab33989741B75c7b53eBa9c2b0A9A4010";
+  "0x429Deee20849c57e50c7bceA54378cBCc3DDa455";

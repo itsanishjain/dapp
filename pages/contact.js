@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState,useEffect } from "react";
 
-export default function about() {
+export default function Contact() {
   const inputEmailRef = useRef();
   const inputPasswordRef = useRef();
 
@@ -37,7 +37,7 @@ export default function about() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button onClick={emailFocus}>Hi</button>
-        <p>email field render's {renderCount.current} times </p>
+        <p>email field renders {renderCount.current} times </p>
         <input
           className="border border-slate-500 rounded-sm p-1"
           name="password"

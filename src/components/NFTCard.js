@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function () {
+export default function NFTCard () {
   return (
     <div className="bg-gradient-to-br from-orange-400 to-orange-700 h-[32rem] mt-8 mb-8 max-w-sm mx-auto p-1 rounded-[24px] shadow-lg shadow-red-300 scale-75 translate-x-4 skew-y-6 ">
       <div className="h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-[24px]">

@@ -204,7 +204,6 @@ export default function Home() {
         </div>
       );
     }
-
     if (presaleStarted && !presaleEnded) {
       return (
         <div>

@@ -8,8 +8,11 @@ export default function NavigationBar() {
         <Link href="/">
           <a className="text-md font-medium">Home</a>
         </Link>
-        <Link href="/about">
-          <a className="text-md font-medium">About</a>
+        <Link href="/whitelist">
+          <a className="text-md font-medium">whitelist</a>
+        </Link>
+        <Link href="/web3Rocks">
+          <a className="text-md font-medium">Web3 Rocks Collection</a>
         </Link>
       </div>
     </nav>

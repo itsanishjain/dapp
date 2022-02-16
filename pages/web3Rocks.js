@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Card from "../src/components/Card";
 import Button from "../src/components/Button";
 import Loader from "../src/components/Loader";
-import NFTCard from '../src/components/NFTCard';
 
 import { abi, NFT_CONTRACT_ADDRESS } from "../src/constants";
 
@@ -67,6 +66,14 @@ export default function Home() {
     }
   };
 
+  const disconnectWallet = async () => {
+    try {
+      await getProviderOrSigner(true);
+      setWalletConnected(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const startPresale = async () => {
     try {
@@ -166,6 +173,7 @@ export default function Home() {
         disableInjectedProvider: false,
       });
       connectWallet();
+
       const _presaleStarted = checkIfPresaleStarted();
       if (_presaleStarted) {
         checkIfPresaleEnded();
@@ -175,7 +183,6 @@ export default function Home() {
 
       // Set an interval which gets called every 5 seconds to check presale has ended
       const presaleEndedInterval = setInterval(async function () {
-        console.log("calling checkIfPresaleEnded every 5 seconds.......");
         const _presaleStarted = await checkIfPresaleStarted();
         if (_presaleStarted) {
           const _presaleEnded = await checkIfPresaleEnded();
@@ -219,7 +226,7 @@ export default function Home() {
 
     if (presaleStarted && presaleEnded) {
       // return <button onClick={publicMint}>Public Mint 🚀</button>;
-      return <Button onClick={publicMint} text="Public Mint 🚀" />;
+      return <Button onClick={publicMint} text="Public Mint 🚀" />
     }
   };
 
@@ -243,8 +250,6 @@ export default function Home() {
       <footer className="mt-8 text-center text-slate-400 font-medium text-lg">
         Made with &#10084; by Web3 Rocks
       </footer>
-
-      {/* <NFTCard /> */}
     </div>
   );
 }

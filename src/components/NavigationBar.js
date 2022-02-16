@@ -14,6 +14,12 @@ export default function NavigationBar() {
         <Link href="/web3Rocks">
           <a className="text-md font-medium">Web3 Rocks Collection</a>
         </Link>
+
+        <Link href="/">
+          <a className="text-md font-medium">Home</a>
+        </Link>
+
+
       </div>
     </nav>
   );

@@ -19,6 +19,7 @@ export default function Web3Rocks() {
   const [loading, setLoading] = useState(false);
   const [isOwner, setIsOwner] = useState(false);
   const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
+  const [nftUrl, setNftUrl] = useState(false);
 
   const web3ModalRef = useRef();
 
@@ -50,6 +51,7 @@ export default function Web3Rocks() {
       setLoading(true);
       await tx.wait();
       setLoading(false);
+      setNftUrl(true);
       toast("You successfully minted a web3Rocks!");
     } catch (err) {
       console.error(err);
@@ -134,6 +136,12 @@ export default function Web3Rocks() {
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       const _tokenIds = await nftContract.tokenIds();
       setTokenIdsMinted(_tokenIds.toString());
+      console.log(
+        tokenIdsMinted,
+        "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
+        _tokenIds.toString()
+      );
+      
     } catch (err) {
       console.error(err);
     }
@@ -233,6 +241,17 @@ export default function Web3Rocks() {
         designation={`Its an NFT collection for developers in Web3 ${tokenIdsMinted}/20 have been minted `}
         imageUrl="rocket.svg"
       />
+      {nftUrl && (
+        <div className="text-center mt-4">
+          <a
+            className="text-lg font-medium  text-black cursor-pointer underline"
+            href={`https://testnets.opensea.io/assets/${NFT_CONTRACT_ADDRESS}/${tokenIdsMinted}`}
+          >
+            Here is your NFT
+          </a>
+        </div>
+      )}
+
       <div className="max-w-sm mx-auto text-center mt-8 text-xl font-medium ">
         {renderButton()}
       </div>

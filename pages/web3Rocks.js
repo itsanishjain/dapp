@@ -209,7 +209,7 @@ export default function Web3Rocks() {
             Presale has started!!! If your address is whitelisted, Mint a Web3
             Rocks 🥳
           </div>
-          <button onClick={presaleMint}>Presale Mint 🚀</button>
+          <Button onClick={presaleMint} text="Presale Mint 🚀" />
         </div>
       );
     }

@@ -1,10 +1,5 @@
 import React from "react";
 
-/*
-max-w-0 => max-width: 0rem;
-flex => display: flex;
-*/
-
 export default function Card({ name, designation, imageUrl }) {
   return (
     <>

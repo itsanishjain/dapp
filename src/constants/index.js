@@ -1,3 +1,75 @@
+export const NFT_CONTRACT_ADDRESS =
+  "0x85397a46F93dA9051d9AA46694cfDF7bdaaE5aA2";
+
+export const WHITELIST_CONTRACT_ADDRESS =
+  "0xa7922Fa4105CCfb88AeccD1581f2c756439ec2Ef";
+
+export const whitelistABI = [
+  {
+    inputs: [
+      {
+        internalType: "uint8",
+        name: "_maxWhiteListedAddress",
+        type: "uint8",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [],
+    name: "addAddressesToWhitelist",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "maxWhiteListedAddress",
+    outputs: [
+      {
+        internalType: "uint8",
+        name: "",
+        type: "uint8",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "numAddressesWhitelisted",
+    outputs: [
+      {
+        internalType: "uint8",
+        name: "",
+        type: "uint8",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "whiteListedAddresses",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+];
+
 export const abi = [
   {
     inputs: [
@@ -581,74 +653,3 @@ export const abi = [
     type: "receive",
   },
 ];
-export const NFT_CONTRACT_ADDRESS =
-  "0xC24316D86Eb1E3F50B05AbB951894087a0bBb1D4";
-
-export const whitelistABI = [
-  {
-    inputs: [
-      {
-        internalType: "uint8",
-        name: "_maxWhiteListedAddress",
-        type: "uint8",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    inputs: [],
-    name: "addAddressesToWhitelist",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "maxWhiteListedAddress",
-    outputs: [
-      {
-        internalType: "uint8",
-        name: "",
-        type: "uint8",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "numAddressesWhitelisted",
-    outputs: [
-      {
-        internalType: "uint8",
-        name: "",
-        type: "uint8",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    name: "whiteListedAddresses",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-];
-
-export const WHITELIST_CONTRACT_ADDRESS =
-  "0xAE28C41Ab33989741B75c7b53eBa9c2b0A9A4010";

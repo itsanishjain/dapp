@@ -3,23 +3,17 @@ import Link from "next/link";
 
 export default function NavigationBar() {
   return (
-    <nav className="p-3 mx-auto bg-slate-200 max-w-4xl  ">
+    <nav className="p-3 mx-auto bg-slate-200 max-w-4xl mt-4  ">
       <div className="flex space-x-4 ">
         <Link href="/">
-          <a className="text-md font-medium">Home</a>
+          <a className="text-md font-medium p-1 hover:bg-slate-300 hover:rounded">Home</a>
         </Link>
         <Link href="/whitelist">
-          <a className="text-md font-medium">whitelist</a>
+          <a className="text-md p-1 font-medium hover:bg-slate-300 hover:rounded">whitelist</a>
         </Link>
         <Link href="/web3Rocks">
-          <a className="text-md font-medium">Web3 Rocks Collection</a>
+          <a className="text-md font-medium p-1 hover:bg-slate-300 hover:rounded">Web3Rocks_Collection</a>
         </Link>
-
-        <Link href="/">
-          <a className="text-md font-medium">Home</a>
-        </Link>
-
-
       </div>
     </nav>
   );

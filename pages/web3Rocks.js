@@ -12,7 +12,7 @@ import Loader from "../src/components/Loader";
 
 import { abi, NFT_CONTRACT_ADDRESS } from "../src/constants";
 
-export default function Home() {
+export default function Web3Rocks() {
   const [walletConnected, setWalletConnected] = useState(false);
   const [presaleStarted, setPresaleStarted] = useState(false);
   const [presaleEnded, setPresaleEnded] = useState(false);
@@ -32,7 +32,6 @@ export default function Home() {
       setLoading(true);
       await tx.wait();
       setLoading(false);
-      // window.alert("You successfully minted web3Rocks!");
       toast("You successfully minted web3Rocks!");
     } catch (err) {
       console.error(err);
@@ -61,15 +60,6 @@ export default function Home() {
     try {
       await getProviderOrSigner();
       setWalletConnected(true);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const disconnectWallet = async () => {
-    try {
-      await getProviderOrSigner(true);
-      setWalletConnected(false);
     } catch (err) {
       console.error(err);
     }
@@ -225,8 +215,7 @@ export default function Home() {
     }
 
     if (presaleStarted && presaleEnded) {
-      // return <button onClick={publicMint}>Public Mint 🚀</button>;
-      return <Button onClick={publicMint} text="Public Mint 🚀" />
+      return <Button onClick={publicMint} text="Public Mint 🚀" />;
     }
   };
 
@@ -241,7 +230,7 @@ export default function Home() {
 
       <Card
         name="Welcome to Web3 Rocks!"
-        designation={`Its an NFT collection for developers in Crypto ${tokenIdsMinted}/20 have been minted `}
+        designation={`Its an NFT collection for developers in Web3 ${tokenIdsMinted}/20 have been minted `}
         imageUrl="rocket.svg"
       />
       <div className="max-w-sm mx-auto text-center mt-8 text-xl font-medium ">

@@ -1,9 +1,7 @@
 import Head from "next/head";
 import Web3Modal from "web3modal";
 import { providers, Contract } from "ethers";
-
 import { useState, useEffect, useRef } from "react";
-
 import { WHITELIST_CONTRACT_ADDRESS, whitelistABI } from "../src/constants";
 import Loader from "../src/components/Loader";
 import Button from "../src/components/Button";
@@ -42,7 +40,6 @@ export default function Whitelist() {
   }
 
   async function connectWallet() {
-    console.log("Wallet connecting.....");
     try {
       await getProviderOrSigner();
       setWalletConnected(true);
@@ -62,22 +59,17 @@ export default function Whitelist() {
       });
       connectWallet();
     }
-  }, []);
+  }, [walletConnected]);
 
   const getNumberOfWhitelisted = async () => {
     try {
-      console.log("Calling getNumberOfWhitelisted");
       const provider = await getProviderOrSigner();
       const contract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
         whitelistABI,
         provider
       );
-
       const numberOfWhitelisted = await contract.numAddressesWhitelisted();
-
-      console.log(numberOfWhitelisted);
-
       setNumberOfWhitelisted(numberOfWhitelisted);
     } catch (error) {
       console.log("ERROR IN FEATCHING NUMBER OF WHITELISTED", error);
@@ -100,13 +92,12 @@ export default function Whitelist() {
       setLoading(false);
       getNumberOfWhitelisted();
     } catch (error) {
-      console.log(error.error.message);
       setScError(error.error.message);
     }
   };
 
   function handleConnectWallet() {
-    console.log("WALLET CONNECTED ANISH");
+    setScError(null);
     addAddressToWhitelist();
   }
 
@@ -114,12 +105,11 @@ export default function Whitelist() {
     if (walletConnected) {
       if (joinedWhitelist) {
         console.log("Already JOINED");
-        return <div>Thanks for joining</div>;
+        return <div className="text-md font-bold">Thanks for joining</div>;
       } else if (loading) {
         return <Loader />;
       } else {
-        // return <button onClick={handleConnectWallet}>Join whitelist</button>;
-        return <Button onClick={handleConnectWallet} text="Join Whitelist" />
+        return <Button onClick={handleConnectWallet} text="Join Whitelist" />;
       }
     }
   }
@@ -137,9 +127,11 @@ export default function Whitelist() {
 
         {renderButton()}
 
-        <p className = "text-lg font-medium text-white">Total member joined is {numberOfWhitelisted}</p>
+        <p className="text-lg font-medium text-white">
+          Total member joined is {numberOfWhitelisted}
+        </p>
 
-        {scError && <p>{scError}</p>}
+        {scError && <p className="text-white text-md mt-4 ">{scError}</p>}
       </main>
     </div>
   );

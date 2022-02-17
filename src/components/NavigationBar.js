@@ -6,7 +6,7 @@ export default function NavigationBar() {
     <nav className="p-3 mx-auto bg-slate-200 max-w-4xl mt-4  ">
       <div className="flex space-x-4 ">
         <Link href="/">
-          <a className="text-md font-medium p-1 hover:bg-slate-300 hover:rounded">Home</a>
+          <a className="text-md font-medium p-1 hover:bg-slate-300 hover:rounded ease-in">Home</a>
         </Link>
         <Link href="/whitelist">
           <a className="text-md p-1 font-medium hover:bg-slate-300 hover:rounded">whitelist</a>

@@ -112,6 +112,9 @@ export default function Whitelist() {
         return <Button onClick={handleConnectWallet} text="Join Whitelist" />;
       }
     }
+    else{
+      return <Button onClick={connectWallet} text="Connect Wallet" />;
+    }
   }
 
   return (

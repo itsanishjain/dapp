@@ -135,13 +135,7 @@ export default function Web3Rocks() {
       const provider = await getProviderOrSigner();
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       const _tokenIds = await nftContract.tokenIds();
-      setTokenIdsMinted(_tokenIds.toString());
-      console.log(
-        tokenIdsMinted,
-        "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
-        _tokenIds.toString()
-      );
-      
+      setTokenIdsMinted(_tokenIds.toString());  
     } catch (err) {
       console.error(err);
     }
